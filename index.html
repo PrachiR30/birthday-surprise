@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="hearts-container"></div>
+<div class="sparkles"></div>
+
+<!-- SCREEN 1 -->
+<div id="screen1" class="screen active">
+    <div class="intro">
+        <h1>For Someone Very Special 💖</h1>
+        <p>You are my safe place ✨</p>
+        <button onclick="nextScreen(2)">Tap to Begin 💕</button>
+    </div>
+</div>
+
+<!-- SCREEN 2 (GIFT BOX) -->
+<div id="screen2" class="screen">
+    <div class="gift-box" onclick="nextScreen(3)">🎁</div>
+    <p class="gift-text">Tap the gift 🎁</p>
+</div>
+
+<!-- SCREEN 3 (ENVELOPE) -->
+<div id="screen3" class="screen">
+    <p class="tap-text">💌 Tap to open your letter 💌</p>
+
+    <div class="envelope" onclick="openEnvelope()">
+        <div class="flap"></div>
+
+        <div class="letter">
+            <p style="font-size:14px; line-height:1.5;">
+Happy Birthday to the most special person in my life ❤️🎂
+I don’t even know where to begin, because words feel so small when it comes to you. You are not just my boyfriend… you are my safe place, my peace, my happiness, and my biggest comfort. In this world where everything can feel so uncertain, you are the one thing I’m always sure about.
+
+You are so genuine, so caring, so loving… and that’s what makes you so rare. The way you understand me without me saying a word, the way you make me smile even on my worst days, the way you protect my heart without even trying… it means everything to me. You are cute in ways you don’t even realize, smart in ways that inspire me, and yes… a little naughty too, which makes me love you even more 😄❤️
+
+I feel so lucky to have you, to love you, and to be loved by you. You’ve become such an important part of my life that I can’t imagine a day without you. You make my world brighter, my heart fuller, and my life so much more beautiful.
+
+I promise to stand by you, support you, annoy you, laugh with you, and love you endlessly through everything. No matter what happens, I’ll always choose you.
+
+I love you so so much ❤️
+Happy Birthday, my everything 💖
+            </p>
+
+            <button onclick="nextScreen(4)">Click here move towards another surprise 💖</button>
+        </div>
+    </div>
+</div>
+
+<!-- SCREEN 4 -->
+<div id="screen4" class="screen">
+    <img id="slideshow" src="photos/img1.jpg">
+</div>
+
+<!-- FINAL SCREEN -->
+<div id="screen5" class="screen final-screen">
+    <h1 class="love-text">I LOVE YOU ❤️</h1>
+</div>
+
+<audio id="song" src="song.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

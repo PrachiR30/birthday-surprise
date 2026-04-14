@@ -1,0 +1,174 @@
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+/* SCREENS */
+.screen {
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.active {display:flex;}
+
+/* 🌈 FIRST SCREEN */
+#screen1 {
+    background: linear-gradient(-45deg,#ff9ec4,#ffcce0,#ffb6d9,#ffd6e8);
+    background-size:400% 400%;
+    animation:gradient 10s infinite;
+}
+@keyframes gradient {
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
+}
+
+.intro {color:white;text-align:center;}
+
+/* BUTTON */
+button {
+    padding:14px 28px;
+    border-radius:30px;
+    border:none;
+    background:rgba(255,255,255,0.25);
+    color:white;
+}
+
+/* 🎁 GIFT BOX */
+#screen2 {
+    background: linear-gradient(135deg,#ff9ec4,#ff4d6d);
+}
+.gift-box {
+    font-size:100px;
+    animation:bounce 1.5s infinite;
+}
+.gift-text {
+    color:white;
+    margin-top:15px;
+}
+
+@keyframes bounce {
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
+
+/* 💖 HEART FLOAT */
+.hearts-container {position:fixed;width:100%;height:100%;pointer-events:none;}
+
+.heart {
+    position:absolute;
+    width:18px;height:18px;
+    background:#ff4d6d;
+    transform:rotate(45deg);
+    animation:float 6s linear infinite;
+}
+.heart::before,.heart::after{
+    content:"";position:absolute;width:18px;height:18px;background:#ff4d6d;border-radius:50%;
+}
+.heart::before{top:-9px;}
+.heart::after{left:-9px;}
+
+@keyframes float {
+    to{transform:translateY(-100vh) rotate(45deg);opacity:0;}
+}
+
+/* ✨ SPARKLES */
+.sparkles {
+    position:fixed;width:100%;height:100%;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size:25px 25px;
+    opacity:0.2;
+    animation:sparkleMove 6s linear infinite;
+}
+@keyframes sparkleMove {
+    to{transform:translateY(-60px);}
+}
+
+/* 💌 ENVELOPE */
+.tap-text {color:white;margin-bottom:20px;}
+
+.envelope {
+    width:260px;height:170px;
+    background:#ff6f91;
+    border-radius:12px;
+    position:relative;
+    overflow:hidden;
+}
+.flap {
+    position:absolute;width:100%;height:100%;
+    background:#ff3b6b;
+    clip-path:polygon(0 0,50% 50%,100% 0);
+    transform-origin:top;
+    transition:0.8s;
+}
+.letter {
+    position:absolute;
+    width:90%;height:120px;
+    left:5%;bottom:0;
+    background:white;
+    border-radius:10px;
+    padding:10px;
+    transform:translateY(100%);
+    transition:0.8s;
+    overflow-y:auto;
+}
+
+/* 💌 FIXED BUTTON */
+.letter button {
+    width:100%;
+    margin-top:10px;
+    background:#ff3366;
+    color:white;
+    font-size:14px;
+    border-radius:20px;
+    padding:10px;
+}
+
+.envelope.open .flap {transform:rotateX(180deg);}
+.envelope.open .letter {transform:translateY(-30%);}
+
+/* 📸 SLIDESHOW */
+#slideshow {
+    width:100%;height:100%;object-fit:cover;
+}
+
+/* 💖 FINAL SCREEN */
+.final-screen {
+    background: radial-gradient(circle,#ff9ec4,#ff4d6d);
+}
+.love-text {
+    font-size:36px;
+    color:white;
+    opacity:0;
+    transform:scale(0.5);
+    animation:love 3s forwards;
+}
+@keyframes love {
+    to{opacity:1;transform:scale(1.2);}
+}
+
+/* 💓 HEART RAIN */
+.rain-heart {
+    position:fixed;
+    top:-10px;
+    width:15px;height:15px;
+    background:#ff3366;
+    transform:rotate(45deg);
+    animation:rain 4s linear infinite;
+}
+.rain-heart::before,.rain-heart::after{
+    content:"";position:absolute;width:15px;height:15px;background:#ff3366;border-radius:50%;
+}
+.rain-heart::before{top:-7px;}
+.rain-heart::after{left:-7px;}
+
+@keyframes rain {
+    to{transform:translateY(100vh) rotate(45deg);opacity:0;}
+}
